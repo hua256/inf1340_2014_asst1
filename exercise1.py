@@ -21,6 +21,7 @@ __status__ = "Prototype"
 
 # imports one per line
 
+print ('test')
 
 def grade_to_gpa(grade):
     """
@@ -40,6 +41,7 @@ def grade_to_gpa(grade):
         ValueError if parameter is out of range
     """
 
+print ('test')
     letter_grade = ""
     gpa = 0.0
 
