@@ -2,10 +2,10 @@
 
 """ Module to test exercise1.py """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
+__author__ = "Joshua Chisholm and Christopher Piche"
+__email__ = "josh.chisholm@mail.utoronto.ca and christopher.piche@mail.utoronto.ca"
 
-__copyright__ = "2014 Susan Sim"
+__copyright__ = "2014 Joshua Chisholm and Christopher Piche"
 __license__ = "MIT License"
 
 __status__ = "Prototype"
@@ -20,15 +20,17 @@ def test_letter_grade():
     """
     assert grade_to_gpa("A+") == 4.0
     assert grade_to_gpa("A") == 4.0
-    assert grade_to_gpa("A-") == 4.0
-    assert grade_to_gpa("B+") == 4.0
-    assert grade_to_gpa("B") == 4.0
-    assert grade_to_gpa("B-") == 4.0
-    assert grade_to_gpa("FZ") == 4.0
+    assert grade_to_gpa("A-") == 3.7
+    assert grade_to_gpa("B+") == 3.3
+    assert grade_to_gpa("B") == 3.0
+    assert grade_to_gpa("B-") == 2.7
+    assert grade_to_gpa("FZ") == 0.0
     
     with pytest.raises(ValueError):
         grade_to_gpa("q")
-    # add more tests for invalid values
+        grade_to_gpa("a+")
+        grade_to_gpa("a-")
+        grade_to_gpa("a")
 
 
 def test_percentage_grade():
@@ -75,4 +77,3 @@ def test_float_input():
     with pytest.raises(TypeError):
         grade_to_gpa(82.5)
 
-# add functions for any other tests

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-""" Assignment 1, Exercise 1, INF1340, Fall, 2014. Grade-to-GPA conversion.
+""" Assignment 1, Exercise 1, INF1340, Fall 2014. Grade-to-GPA conversion.
 
 This module contains one function grade_to_gpa. It can be passed a parameter
 that is an integer (0-100) or a letter grade (A+, A, A-, B+, B, B-, or FZ). All
@@ -28,7 +28,7 @@ def grade_to_gpa(grade):
     :param:
         grade (integer or string): Grade to be converted
             If integer, accepted values are 0-100
-            If string, accepted values are A+, A, A-, B+, B, B-, FZ
+            If string, accepted values are A+, A, A-, B+, B, B-, or FZ
 
     :return:
         float: The equivalent GPA
@@ -37,6 +37,7 @@ def grade_to_gpa(grade):
     :raises:
         TypeError if parameter is not a string or integer
         ValueError if parameter is out of range
+
     """
 
     letter_grade = {"A+": 4.0, "A": 4.0, "A-": 3.7, "B+": 3.3, "B": 3.0, "B-": 2.7, "FZ": 0.0}
@@ -77,4 +78,6 @@ def grade_to_gpa(grade):
         raise TypeError("Invalid type passed as parameter")
 
     return gpa
+
+
 
