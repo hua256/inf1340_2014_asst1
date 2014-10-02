@@ -45,6 +45,8 @@ def grade_to_gpa(grade):
     if type(grade) is str:
         # check that the grade is one of the accepted values
         # assign grade to letter_grade
+        # raise a ValueError exception
+        raise ValueError("Entered grade must be capitalized")
 
         gpa = letter_grade[grade]
 
