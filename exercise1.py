@@ -45,10 +45,17 @@ def grade_to_gpa(grade):
     if type(grade) is str:
         # check that the grade is one of the accepted values
         # assign grade to letter_grade
-        # raise a ValueError exception
-        raise ValueError("Entered grade must be capitalized")
+        # convert input to upper case
 
-        gpa = letter_grade[grade]
+        grade = grade.upper()
+
+        # check that the grade is in letter_grade dictionary
+
+        try:
+            gpa = letter_grade[grade]
+        except:
+            # raise a Value Error exception
+            raise ValueError("Entered grade must fall within U of T grad student grading scale")
 
     elif type(grade) is int:
         # check that grade is in the accepted range

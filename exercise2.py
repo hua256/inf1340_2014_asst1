@@ -1,33 +1,43 @@
 #!/usr/bin/env python3
 
+"""Assignment 1, Exercise 2, INF1340, Fall 2014. UPC Checksum.
+
+This module contains one function XXXX.
+
+It can be passed XXXX. All
+other inputs will result in an error.
+
+Example:
+    $ python exercise2.py
+
 """
-    Perform a checksum on a UPC
 
-    Assignment 1, Exercise 2, INF1340 Fall 2014
-"""
+__author__ = "Joshua Chisholm and Christopher Piche"
+__email__ = "josh.chisholm@mail.utoronto.ca and christopher.piche@mail.utoronto.ca"
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
-
-__copyright__ = "2014 Susan Sim"
+__copyright__ = "2014 Joshua Chisholm and Christopher Piche"
 __license__ = "MIT License"
 
 __status__ = "Prototype"
 
 # imports one per line
 
-
-def checksum (upc):
+def checksum(upc):
     """
-    Checks if the digits in a UPC is consistent with checksum
+    Checks if the digits in a UPC are consistent with checksum
 
-    :param upc: a 12-digit universal product code
+    :param
+        upc(integer): universal product code to verify correctness of digits
+            Accepted values are
+
     :return:
         Boolean: True, checksum is correct
         False, otherwise
+
     :raises:
         TypeError if input is not a strong
         ValueError if string is the wrong length (with error string stating how many digits are over or under
+
     """
 
     # check type of input
