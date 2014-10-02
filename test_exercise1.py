@@ -13,6 +13,7 @@ __status__ = "Prototype"
 # imports one per line
 from exercise1 import grade_to_gpa
 
+import pytest
 
 def test_letter_grade():
     """
@@ -28,9 +29,8 @@ def test_letter_grade():
     
     with pytest.raises(ValueError):
         grade_to_gpa("q")
-        grade_to_gpa("a+")
-        grade_to_gpa("a-")
-        grade_to_gpa("a")
+        grade_to_gpa("c")
+
 
 
 def test_percentage_grade():
