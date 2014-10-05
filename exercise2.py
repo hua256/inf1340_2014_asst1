@@ -72,13 +72,13 @@ def checksum(upc):
         count += 1
 
     # generate checksum using the first 11 digits provided
-    result = (((odd_sum * 3) + even_sum) % 10)
+    result = (((even_sum * 3) + odd_sum) % 10)
 
     if not result == 0:
         result = 10 - result
 
     # check against the the twelfth digit
-    return result == upc[-1]
+    return result == int(upc[-1])
 
 
 

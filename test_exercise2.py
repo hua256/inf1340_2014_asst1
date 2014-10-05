@@ -10,14 +10,12 @@ __license__ = "MIT License"
 
 __status__ = "Prototype"
 
-# imports one per line
 import pytest
 from exercise2 import checksum
 
-
 def test_checksum():
     """
-    Test some UPC codes to insure the results are coming out correctly
+    Test some UPCs to insure the results are coming out correctly
     """
     assert checksum("786936224306") is True
     assert checksum("085392132225") is True
@@ -39,24 +37,22 @@ def test_checksum():
     assert checksum("000213035154") is False
     assert checksum("010608030609") is False
     assert checksum("407020803092") is False
-    
-
 
 def test_input():
     """
     Inputs that are the incorrect format and length
     """
     with pytest.raises(TypeError):
-        checksum(1.0) #no floats allowed
-        checksum(786936224306.0) #no floats allowed
-        checksum(786936224306) #no ints allowed
-        checksum((7,8,6,9,3,6,2,2,4,3,0,6)) #no lists allowed
+        checksum(1.0) # no floats allowed
+        checksum(786936224306.0) # no floats allowed
+        checksum(786936224306) # no ints allowed
+        checksum((7,8,6,9,3,6,2,2,4,3,0,6)) # no lists allowed
 
     with pytest.raises(ValueError):
-        checksum("") #must not be less than 12 characters
-        checksum("1") #must not be less than 12 characters
-        checksum("1234567890") #must not be less than 12 characters
-        checksum("1234567890123123557") #must not be more than 12 characters
-        checksum("40702080309a") #must not be contains a character
-        checksum("763O895376l7") #must not be contains the letters 'O' and 'l'
-        checksum("abcdefghijkl") #must not be contains only characters
+        checksum("") # must not be less than 12 characters
+        checksum("1") # must not be less than 12 characters
+        checksum("1234567890") # must not be less than 12 characters
+        checksum("1234567890123123557") # must not be more than 12 characters
+        checksum("40702080309a") # must not contain a character
+        checksum("763O895376l7") # must not contain the letters 'O' and 'l'
+        checksum("abcdefghijkl") # must not contain only characters
