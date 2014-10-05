@@ -2,9 +2,9 @@
 
 """Assignment 1, Exercise 2, INF1340, Fall 2014. UPC Checksum.
 
-This module contains one function XXXX.
+This module contains one function, checksum.
 
-It can be passed XXXX. All
+It can be passed a string of 12 digits. All
 other inputs will result in an error.
 
 Example:
@@ -28,31 +28,62 @@ def checksum(upc):
 
     :param
         upc(integer): universal product code to verify correctness of digits
-            Accepted values are
+            Accepted values are 12 digits long, containing character 0 to 9
 
     :return:
         Boolean: True, checksum is correct
         False, otherwise
 
     :raises:
-        TypeError if input is not a strong
-        ValueError if string is the wrong length (with error string stating how many digits are over or under
+        TypeError if input is not a string
+        ValueError if string is the wrong length (with error string stating how many digits are over or under)
+        ValueError if string contains any character other than digits 0 to 9
 
     """
 
     # check type of input
     # raise TypeError if not string
+    if not type(upc) == str:
+        raise TypeError("Entered UPC must be a string")
+
+    if not upc.isdigit():
+        raise ValueError("Entered UPC must contain digits only")
 
     # check length of string
     # raise ValueError if not 12
+    if not len(upc) == 12:
+        digit_difference = len(upc) - 12
+        if digit_difference < 0:
+            raise ValueError("Entered UPC must be 12 digits; you are under by " + str(abs(digit_difference)) + " digits")
+        else:
+            raise ValueError("Entered UPC must be 12 digits; you are over by " + str(digit_difference) + " digits")
 
-    # convert string to array
-    # hint: use the list function
+    even_sum = 0
+    odd_sum = 0
+    count = 0
+
+    for digit in upc[:-1]:
+        if count % 2 == 0:
+            even_sum += int(digit)
+        else:
+            odd_sum += int(digit)
+        count += 1
 
     # generate checksum using the first 11 digits provided
+    result = (((odd_sum * 3) + even_sum) % 10)
+
+    if not result == 0:
+        result = 10 - result
+
     # check against the the twelfth digit
+    return result == upc[-1]
 
-    # return True if they are equal, False otherwise
 
-    return False
+
+
+
+
+
+
+
 
