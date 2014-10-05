@@ -87,6 +87,3 @@ def grade_to_gpa(grade):
         raise TypeError("Invalid type passed as parameter")
 
     return gpa
-
-
-

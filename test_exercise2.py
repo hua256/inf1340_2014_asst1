@@ -10,6 +10,8 @@ __license__ = "MIT License"
 
 __status__ = "Prototype"
 
+# imports one per line
+
 import pytest
 from exercise2 import checksum
 
@@ -40,7 +42,7 @@ def test_checksum():
 
 def test_input():
     """
-    Inputs that are the incorrect format and length
+    Inputs are not the correct format and length
     """
     with pytest.raises(TypeError):
         checksum(1.0) # no floats allowed
@@ -49,10 +51,11 @@ def test_input():
         checksum((7,8,6,9,3,6,2,2,4,3,0,6)) # no lists allowed
 
     with pytest.raises(ValueError):
-        checksum("") # must not be less than 12 characters
-        checksum("1") # must not be less than 12 characters
-        checksum("1234567890") # must not be less than 12 characters
-        checksum("1234567890123123557") # must not be more than 12 characters
-        checksum("40702080309a") # must not contain a character
+        checksum("") # must not be less than 12 digits
+        checksum("1") # must not be less than 12 digits
+        checksum("1234567890") # must not be less than 12 digits
+        checksum("1234567890123123557") # must not be more than 12 digits
+        checksum("40702080309a") # must not contain any non-digit characters
+        checksum("40702080309!") # must not contain any non-digit characters
+        checksum("abcdefghijkl") # must not contain any non-digit characters
         checksum("763O895376l7") # must not contain the letters 'O' and 'l'
-        checksum("abcdefghijkl") # must not contain only characters

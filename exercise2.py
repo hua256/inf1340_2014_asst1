@@ -26,9 +26,9 @@ def checksum(upc):
     """
     Checks if the digits in a UPC are consistent with checksum
 
-    :param
+    :param:
         upc(integer): universal product code to verify correctness of digits
-            Accepted values are 12 digits long, containing character 0 to 9
+            Accepted values are 12 digits long, containing numbers 0 to 9
 
     :return:
         Boolean: True, checksum is correct
@@ -37,7 +37,7 @@ def checksum(upc):
     :raises:
         TypeError if input is not a string
         ValueError if string is the wrong length (with error string stating how many digits are over or under)
-        ValueError if string contains any character other than digits 0 to 9
+        ValueError if string contains any character other than numbers 0 to 9
 
     """
 
@@ -52,7 +52,7 @@ def checksum(upc):
         raise ValueError("Entered UPC must contain digits only")
 
     # check length of string
-    # raise ValueError if not 12
+    # raise ValueError if length of upc is not 12 digits
     if not len(upc) == 12:
         digit_difference = len(upc) - 12
         if digit_difference < 0:
@@ -79,13 +79,4 @@ def checksum(upc):
 
     # check against the the twelfth digit
     return result == int(upc[-1])
-
-
-
-
-
-
-
-
-
 

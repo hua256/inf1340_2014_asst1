@@ -11,9 +11,9 @@ __license__ = "MIT License"
 __status__ = "Prototype"
 
 # imports one per line
-from exercise1 import grade_to_gpa
 
 import pytest
+from exercise1 import grade_to_gpa
 
 def test_letter_grade():
     """
@@ -30,8 +30,6 @@ def test_letter_grade():
     with pytest.raises(ValueError):
         grade_to_gpa("q")
         grade_to_gpa("c")
-
-
 
 def test_percentage_grade():
     """
@@ -69,11 +67,9 @@ def test_percentage_grade():
         grade_to_gpa(101)
         grade_to_gpa(-1)
 
-
 def test_float_input():
     """
     Float inputs
     """
     with pytest.raises(TypeError):
         grade_to_gpa(82.5)
-
