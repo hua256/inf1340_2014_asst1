@@ -46,6 +46,8 @@ def checksum(upc):
     if not type(upc) == str:
         raise TypeError("Entered UPC must be a string")
 
+    # check contents of input
+    # raise ValueError if there are non-digit characters
     if not upc.isdigit():
         raise ValueError("Entered UPC must contain digits only")
 
